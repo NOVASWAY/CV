@@ -44,7 +44,14 @@ export default function CV() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background text-foreground overflow-hidden">
+    <main className="min-h-screen bg-background text-foreground overflow-hidden relative">
+      {/* Warm Gradient Overlay */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl" style={{background: 'radial-gradient(circle, rgba(255, 140, 0, 0.4) 0%, rgba(255, 69, 0, 0.2) 50%, transparent 70%)'}}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-15 blur-3xl" style={{background: 'radial-gradient(circle, rgba(255, 165, 0, 0.3) 0%, transparent 70%)'}}></div>
+        <div className="absolute top-1/3 right-0 w-72 h-72 rounded-full opacity-10 blur-3xl" style={{background: 'radial-gradient(circle, rgba(218, 112, 57, 0.2) 0%, transparent 70%)'}}></div>
+      </div>
+
       {/* Animated Background Icons */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         {floatingIcons.map((item) => (
