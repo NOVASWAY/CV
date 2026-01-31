@@ -57,12 +57,15 @@ export default function CV() {
         {floatingIcons.map((item) => (
           <div
             key={item.id}
-            className="absolute text-4xl opacity-5 animate-pulse"
+            className="absolute text-6xl font-bold"
             style={{
               left: `${item.x}%`,
               top: `${item.y}%`,
+              opacity: 0.12,
               animation: `float ${6 + item.id * 0.5}s infinite ease-in-out`,
               animationDelay: `${item.delay}s`,
+              filter: item.id % 2 === 0 ? 'drop-shadow(0 0 8px rgba(132, 199, 255, 0.3))' : 'drop-shadow(0 0 8px rgba(148, 241, 222, 0.2))',
+              textShadow: item.id % 2 === 0 ? '0 0 10px rgba(132, 199, 255, 0.4)' : '0 0 10px rgba(148, 241, 222, 0.3)',
             }}
           >
             {item.icon}
@@ -72,10 +75,10 @@ export default function CV() {
 
       <style>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px) translateX(0px); }
-          25% { transform: translateY(-20px) translateX(10px); }
-          50% { transform: translateY(-40px) translateX(-10px); }
-          75% { transform: translateY(-20px) translateX(10px); }
+          0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
+          25% { transform: translateY(-30px) translateX(15px) scale(1.05); }
+          50% { transform: translateY(-50px) translateX(-15px) scale(1.08); }
+          75% { transform: translateY(-25px) translateX(10px) scale(1.05); }
         }
       `}</style>
 
