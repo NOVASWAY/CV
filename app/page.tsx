@@ -32,13 +32,23 @@ export default function CV() {
       { icon: '🛡️', label: 'Defense' },
     ];
 
+    // Strategic positioning to avoid content and spread across viewport
+    const positions = [
+      { x: 5, y: 10 },      // Top left
+      { x: 90, y: 15 },     // Top right
+      { x: 8, y: 50 },      // Middle left
+      { x: 85, y: 55 },     // Middle right
+      { x: 12, y: 85 },     // Bottom left
+      { x: 88, y: 80 },     // Bottom right
+    ];
+
     setFloatingIcons(
       icons.map((item, idx) => ({
         id: idx,
-        x: Math.random() * 80,
-        y: Math.random() * 60,
+        x: positions[idx].x,
+        y: positions[idx].y,
         icon: item.icon,
-        delay: idx * 0.1,
+        delay: idx * 0.15,
       }))
     );
   }, []);
